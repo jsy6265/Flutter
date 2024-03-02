@@ -16,7 +16,7 @@ class App extends StatelessWidget {
           //Row : 서로 옆에 놓고 싶을 때, Column : 서로 위 아래로 놓고 싶을 때
           child: Column(
             children: [
-              SizedBox(
+              SizedBox( // 빈공간 만들기?
                 height: 80,
               ),
               Row(
