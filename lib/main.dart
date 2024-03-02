@@ -13,6 +13,7 @@ class App extends StatelessWidget {
         // home의 배경색을 지정하는 위젯 타입의 파라미터, Colors.원하는 색.그림자
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
+          //Row : 서로 옆에 놓고 싶을 때, Column : 서로 위 아래로 놓고 싶을 때
           child: Column(
             children: [
               SizedBox(
