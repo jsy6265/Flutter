@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toon_flix/widgets/button.dart';
 
 void main() {
   runApp(App());
@@ -50,7 +51,7 @@ class App extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 120,
+                height: 60,
               ),
               Text(
                 "Total balance",
@@ -73,43 +74,98 @@ class App extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    // child를 가지는 단순한 Box, div라고 생각하면 됨
-                    decoration: BoxDecoration(
-                      // 말그대로 Container를 꾸미는 요소, CSS?
-                      color: const Color(0xFFF1B333),
-                      borderRadius: BorderRadius.circular(45),
-                    ),
-                    child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-                      child: Text(
-                        "Transfer",
-                        style: TextStyle(fontSize: 20),
-                      ),
+                  Button(
+                    text: 'Teansfer',
+                    bgColor: Color(0xFFF1B33B),
+                    textColor: Colors.black,
+                  ),
+                  Button(
+                    text: 'Request',
+                    bgColor: Color(0xFF1F2123),
+                    textColor: Colors.white,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // 글자도 영역의 중앙으로 오게됨으로 crossAxis로 수직 방향을 영역의 끝으로 설정
+                children: [
+                  const Text(
+                    'Wallets',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 36,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Container(
-                    // child를 가지는 단순한 Box, div라고 생각하면 됨
-                    decoration: BoxDecoration(
-                      // 말그대로 Container를 꾸미는 요소, CSS?
-                      color: const Color(0xFF1F2123),
-                      borderRadius: BorderRadius.circular(45),
+                  Text(
+                    'View All',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(
+                          0.8), // opacity 값은 컴파일 할 때 알기 힘든 값임으로 부모가 cosnt이면 안된다
+                      fontSize: 18,
                     ),
-                    child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-                      child: Text(
-                        "Request",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                  )
+                  ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: const Color(0xFF1f2123),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Euro',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '6 428',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'EUR',
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.8),
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
