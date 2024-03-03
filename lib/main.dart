@@ -119,12 +119,14 @@ class App extends StatelessWidget {
                 height: 20,
               ),
               Container(
+                clipBehavior: Clip.hardEdge, // 자식이 부모의 영역 밖으로 나갈 때 어떤식으로 처리할지
                 decoration: BoxDecoration(
                     color: const Color(0xFF1f2123),
                     borderRadius: BorderRadius.circular(20)),
                 child: Padding(
                   padding: const EdgeInsets.all(30),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -161,6 +163,19 @@ class App extends StatelessWidget {
                             ],
                           )
                         ],
+                      ),
+                      Transform.scale(
+                        //카드의 크기는 변하지 않고 Transformation을 전달? Icon의 크기는 98이라 인식하지만 실제로는 scale을 렌더링한다?
+                        scale: 2.2,
+                        child: Transform.translate(
+                          // Transform.translate는 offset이라는 파라미터 필요
+                          offset: Offset(-5, 12), // 위젯을 이동시킬 x, y 좌표
+                          child: const Icon(
+                            Icons.euro_rounded,
+                            color: Colors.white,
+                            size: 88,
+                          ),
+                        ),
                       )
                     ],
                   ),
